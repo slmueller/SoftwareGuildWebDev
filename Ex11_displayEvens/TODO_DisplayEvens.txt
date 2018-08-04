@@ -1,0 +1,47 @@
+1) create html page with form:
+- Starting no.: text input
+- Ending no.: text input
+- Step: text input
+- button: Display Evens
+- area to show the result
+	- labels
+	- display:none at the start
+
+2) Create JS script:
+- function getEvens():
+	- create numbers: for loop from start-end, i+=step
+	- if(i%2==0) -> add i to results
+	- return array results
+
+3) Connect DisplayEvens button to getEvens():
+	- onclick="getEvens()"
+
+4) Display results:
+	- in the JS script
+	- loop through document.forms[formId].elements to get the input params
+	- set the inner text of label1 to start, end, step
+	- set inner text of result labels to the results -> How to multiply them? -> easier: just make text area & add /n between values
+	- set display prop of both labels to display:block
+
+5) Show errors:
+	- alert()? -> in section for confirm(), prompt() etc.
+	- isValidInput() in JS -> test start, end, step -> return isValid(start) && isValid(end) && isValid(step) && startBeforeEnd(start, end);
+	- isValid(number) in JS -> check for each start,end,step
+		- return isInteger(number) && isPositive(number)
+	- if input is not a number
+		- isInteger() in JS script, check for ints using typeof()
+	- isPositive(number)
+	- startBeforeEnd(start, end) -> return start < end
+	- clearErrors() upon "Recalculate"
+
+6) use Bootstrap CSS form inputs library
+	- find it where?
+	- link bootstrap to the page via CDN:
+		<!-- Latest compiled and minified CSS -->
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+D:	- do the following task first
+D:	- read the following lesson about bootstrap first.

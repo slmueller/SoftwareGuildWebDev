@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/JavaScript" src="displayEvens.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> <!--formats the look of the form-->
+  </head>
+  <body>
+    <div class="container">
+      <h1>Find Even Numbers</h1>
+
+      <form name="evens" onsubmit="return validateItems();" class="form-inline">
+        <div class="form-group">
+          <label for="start">Starting Number</label>
+          <input type="number" class="form-control" id="start">
+        </div>
+
+        <div class="form-group">
+          <label for="end">Ending Number</label>
+          <input type="number" class="form-control" id="end">
+        </div>
+
+        <div class="form-group">
+          <label for="step">Step</label>
+          <input type="number" class="form-control" id="step">
+        </div>
+
+        <button type="submit" id="submitButton" class="btn btn-default">Display Evens</button>
+      </form>
+
+      <div id="results" style="display:none;">
+        <label id="labelEvenNo" for="evenNumbers"></label> <!-- value will be set in JS-->
+        <p id="evenNumbers"></p>
+      </div>
+
+    </div>
+  </body>
+</html>
