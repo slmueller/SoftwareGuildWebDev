@@ -14,7 +14,7 @@ a {
 }
 
 a:link {
-	color: #4dff94;
+	color: Black;
 }
 
 a:visited { 
@@ -22,19 +22,7 @@ a:visited {
 }
 
 a:hover {
-	color: #004d00;
 	font-weight: bold;
-}
-
-a:active {
-	color: #004d00;
-	text-decoration: none;
-}
-
-a.currentLink {
-	text-decoration: none;
-	color: #004d00;
-	font-weight: bold;	
 }
 
 footer{

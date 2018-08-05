@@ -1,8 +1,19 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<script type="text/JavaScript" src="restaurant.js"></script>
+		<noscript>
+			<div class="alert alert-warning alert-dismissable">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;
+				</button>
+				Warning! JavaScript is disabled.  This site may not work properly without it.
+				Here are the <a href="http://www.enable-javascript.com/" target="_blank"> instructions how to enable JavaScript in your web browser</a>.
+			</div>
+		</noscript>
 		<title style="text-align: center;">Contact Us</title>
 		<link href="restaurantStyle.css" rel="stylesheet" type="text/css" />
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> <!--adds bootstrap to format look of UI-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- home icon -->
 		<style>
 		label.requiredField{
 			font-weight: bold;
@@ -18,10 +29,6 @@
 
 		select{
 			width: 100%;
-		}	
-
-		td.bottomInput{
-			text-align: left;
 		}		
 		</style>
 	</head>
@@ -32,77 +39,87 @@
 		
 		<div id="navigation">
 			<hr>
-			<p>
-				<a href="index.html">Home</a>&emsp;<a href="menu.html">Menu</a>&emsp;<a href="contactUs.html" class="currentLink">Contact Us</a>
-			</p>
+			<ul class="nav nav-pills">
+			  <li role="presentation"><a href="index.html"><i class="fa fa-home" style="font-size:18px;padding="0 0 0 0";"></i> Home</a></li>
+			  <li role="presentation"><a href="menu.html">Menu</a></li>
+			  <li role="presentation" class="active"><a href="contactUs.html">Contact Us</a></li>
+			</ul>
 		</div>
 		
 		<div id="main">
 			<hr>
-			<form action="submit.html" method="POST">
-				<table>
-					<tr>
-						<td style="text-align: right;"><label for="name" class="requiredField">Name:</label></td>
-						<td><input type="text" id="name" name="name" style="width:99%" required></td>
-					</tr>
+			<form id="contactForm" action="submit.html" method="POST" onsubmit="return validateInput();" class="form-horizontal">
+			
+				<div class="form-group">
+					<label for="name" class="requiredField control-label col-xs-2">Name:</label>
+					<div class="col-xs-4">
+						<input type="text" id="name" name="name" class="form-control" required>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="email" style="text-align: right;" class="requiredField control-label col-xs-2">Email:</label>
+					<div class="col-xs-4">
+						<input type="email" id="email" name="email" class="form-control" required>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="phone" style="text-align: right;" class="requiredField control-label col-xs-2">Phone:</label>
+					<div class="col-xs-4">
+						<input type="number" id="phone" name="phone" class="form-control" required>
+					</div>
+				</div>
 					
-					<tr>
-					<td style="text-align: right;"><label for="email" class="requiredField">Email:</label></td>
-					<td><input type="text" id="email" name="email" style="width:99%" required></td>
+				<div class="form-group">
+					<label for="reason" class="control-label col-xs-2">Reason for Inquiry:</label>
+					<div class="col-xs-4">
+						<select id="contact> name="contact" class="form-control">
+							<option value="catering" selected>Catering</option>
+							<option value="privateParty">Private Party</option>
+							<option value="feedback">Feedback</option>
+							<option value="other">Other</option>
+						</select>
+					</div>
+				</div>
 					
-					<tr>
-					<td style="text-align: right;"><label for="phone" class="requiredField">Phone:</label></td>
-					<td><input type="text" id="phone" name="phone" style="width:99%" required></td>
-					</tr>
+				<div class="form-group">
+					<label for="info" class="control-label col-xs-2">Additional Information</label>
+					<div class="col-xs-4">
+						<textarea id="info" rows="10" cols="50" class="form-control"></textarea>
+					</div>
+				</div>
 					
-					<tr>
-					<td style="text-align: right;"><label for="reason">Reason for Inquiry:</label></td>
-					<td><select id="contact> name="contact" style="width:100%">
-						<option value="catering" selected>Catering</option>
-						<option value="privateParty">Private Party</option>
-						<option value="feedback">Feedback</option>
-						<option value="other">Other</option>
-					</select>
-					</td>
-					</tr>
+				<div class="form-group">		
+					<label for="returningCustomer" class="control-label col-xs-2">Have you been to the restaurant?</label>
+					<div class="col-xs-4">
+						<label for="choice1" class="radio-inline"><input type="radio" id="choice1" name="questionnaire" value="no">No</label>
+						<label for="choice2" class="radio-inline"><input type="radio" id="choice2" name="questionnaire" value="yes">Yes</label>
+					</div>
+				</div>
 					
-					<tr>
-					<td style="text-align: right;"><label for="info">Additional Information</label></td>
-					<td><textarea id="info" rows="10" cols="50"></textarea></td>
-					</tr>
-					
-					<tr>				
-					<td style="text-align: right;"><label for="returningCustomer">Have you been to the restaurant?</label></td>
-					<td class="bottomInput"><input type="radio" id="choice1" name="questionnaire" value="no" checked="checked">
-					<label for="choice1">No</label>
-					<input type="radio" id="choice2" name="questionnaire" value="yes">
-					<label for="choice2">Yes</label></td>
-					</tr>
-					
-					<tr>
-					<td style="text-align: right;"><label for="contactDays">Best days to contact you:</label></td>
-					<td class="bottomInput"><input type="checkbox" id="monday" name ="day" value="monday">
-					<label for="monday">M</label>
-					<input type="checkbox" id="tuesday" name ="day" value="tuesday">
-					<label for="tuesday">T</label>
-					<input type="checkbox" id="wednesday" name ="day" value="wednesday">
-					<label for="wednesday">W</label>
-					<input type="checkbox" id="thursday" name ="day" value="thursday">
-					<label for="thursday">Th</label>
-					<input type="checkbox" id="friday" name ="day" value="friday">
-					<label for="friday">F</label>
-					</td>
-					</tr>
+				<div class="form-group">	
+					<label for="contactDays" class="control-label col-xs-2">Best days to contact you:</label>
+					<div class="col-xs-4">
+						<label class="checkbox-inline"><input type="checkbox" id="monday" name ="day" value="monday">M</label>
+						<label class="checkbox-inline"><input type="checkbox" id="tuesday" name ="day" value="tuesday">T</label>
+						<label class="checkbox-inline"><input type="checkbox" id="wednesday" name ="day" value="wednesday">W</label>
+						<label class="checkbox-inline"><input type="checkbox" id="thursday" name ="day" value="thursday">Th</label>
+						<label class="checkbox-inline"><input type="checkbox" id="friday" name ="day" value="friday">F</label>
+					</div>
+				</div>
 		
-					<tr>		
-					<td></td>
-					<td><input type="submit" name="sendRequest" value="Send Request"></td>
-					</tr>
-				</table>
+				<div class="form-group">
+					<div class="col-xs-5">				
+					</div>
+					<div class="col-xs-1" style="text-align: right;">				
+						<input type="submit" name="sendRequest" value="Send Request">
+					</div>
+				</div>
 			</form>
 		</div>
 		
-		<div id="footer">
+		<div id="footer" class="footer navbar-fixed-bottom">
 			<hr />
 			<footer>
 				<p>Via Roma 1, Bologna, Italia, 47900 

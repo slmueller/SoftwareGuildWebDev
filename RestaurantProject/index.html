@@ -1,8 +1,18 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<noscript>
+			<div class="alert alert-warning alert-dismissable">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;
+				</button>
+				Warning! JavaScript is disabled.  This site may not work properly without it.
+				Here are the <a href="http://www.enable-javascript.com/" target="_blank"> instructions how to enable JavaScript in your web browser</a>.
+			</div>
+		</noscript>
 		<title style="text-align: center;">Home</title>
 		<link href="restaurantStyle.css" rel="stylesheet" type="text/css" />
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> <!--adds bootstrap to format look of UI-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- home icon -->
 		<style>
 		#main {
 			background-color: #f5f5f5;
@@ -16,11 +26,13 @@
 		
 		<div id="navigation">
 			<hr>
-			<p>
-				<a href="index.html" class="currentLink">Home</a>&emsp;<a href="menu.html">Menu</a>&emsp;<a href="contactUs.html">Contact Us</a>
-			</p>
+			<ul class="nav nav-pills">
+			  <li role="presentation" class="active"><a href="index.html"><i class="fa fa-home" style="font-size:18px;padding="0 0 0 0";"></i> Home</a></li>
+			  <li role="presentation"><a href="menu.html">Menu</a></li>
+			  <li role="presentation"><a href="contactUs.html">Contact Us</a></li>
+			</ul>
 		</div>
-		
+				
 		<div id="main">
 			<hr>
 			<div id="table">
@@ -51,7 +63,7 @@
 		</div>
 		</div>
 		
-		<div id="footer">
+		<div id="footer" class="footer navbar-fixed-bottom">
 			<hr />
 			<footer>
 				<p>Via Roma 1, Bologna, Italia, 47900 
@@ -60,7 +72,6 @@
 				0039-0987-456-132</p>
 			</footer>
 		</div>
-
 	</body>
 </html>
 
