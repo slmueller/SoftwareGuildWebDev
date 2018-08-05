@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/JavaScript" src="luckySevens.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> <!--formats the look of the form-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- dollar icon -->
+	<style>
+		#resultsTable {
+			font-size: 16px;   
+		}
+	</style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Lucky Sevens</h1>
+		<br />
+		<br />
+      <form name="sevens" onsubmit="return validateInputAndPlay();" class="form-horizontal">
+        <div id="inputField" class="form-group">
+          <label class="control-label col-xs-2">Starting Bet:</label>
+		  <div class="input-group col-xs-2">
+			<span class="input-group-addon"><i class="fa fa-dollar"></i></span>
+			<input type="number" class="form-control" id="startingBet" placeholder="0.00" required style="text-align: right;">
+		  </div>
+        </div>
+		
+		<div class="form-group">
+			<div class="col-xs-2">				
+			</div>
+			<div class="col-xs-2" style="text-align: right;">				
+				<button type="submit" id="playButton" class="btn btn-primary">Play</button>
+			</div>
+		</div>
+      </form>
+
+	  <br />
+	  <br />
+	  <br />
+	  <div id="results" style="display:none;">
+		<h2>Results<h2>
+		<div class="container">
+		<div class="table-responsive col-xs-5">
+			<table id="resultsTable" class="table table-striped">
+				<tbody>
+					<tr style="background-color: #76A0D3;">
+						<td>Starting Bet</td>
+						<td style="text-align: right;"><span id="initialBet"></span></td>
+					</tr>
+
+					<tr>
+						<td>Total Rolls Before Going Broke</td>
+						<td style="text-align: right;"><span id="totalRolls"></span></td>
+					</tr>
+
+					<tr>
+						<td>Highest Amount Won</td>
+						<td style="text-align: right;"><span id="maxAmount"></span></td>
+					</tr>
+
+					<tr>
+						<td>Roll Count at Highest Amount Won</td>
+						<td style="text-align: right;"><span id="rollsAtMax"></span></td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+		</div>
+	  </div>
+    </div>
+  </body>
+</html>
