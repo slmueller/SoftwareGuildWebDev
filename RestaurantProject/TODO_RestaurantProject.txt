@@ -1,0 +1,12 @@
+Restaurant project
+
+- using Bootstrap's grid system
+	- label the div enclosing the content with class="container" or "container-fluid"
+
+- validate input:
+	- check that required fields are filled in (Name, email, phone)
+	- put type email on the email
+	- put type text or string on the name? Phone no.?
+X:	- how to go through all the fields in the form? -> don't need it, go by id
+		- does it also work if the fields are within a table?
+	- 

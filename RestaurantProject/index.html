@@ -17,6 +17,17 @@
 		#main {
 			background-color: #f5f5f5;
 		}
+		
+		.carousel-inner img {
+			margin: auto;
+			width: 100%;
+			min-height: 100px;
+		}
+		
+		.carousel-inner img{
+			width 100%;
+			height: 100%;
+		}
 		</style>
 	</head>
 	<body>
@@ -27,43 +38,99 @@
 		<div id="navigation">
 			<hr>
 			<ul class="nav nav-pills">
-			  <li role="presentation" class="active"><a href="index.html"><i class="fa fa-home" style="font-size:18px;padding="0 0 0 0";"></i> Home</a></li>
+			  <li role="presentation" class="active"><a href="index.html"><i class="fa fa-home" style="font-size:18px;padding='0 0 0 0;'"></i> Home</a></li>
 			  <li role="presentation"><a href="menu.html">Menu</a></li>
 			  <li role="presentation"><a href="contactUs.html">Contact Us</a></li>
 			</ul>
 		</div>
 				
-		<div id="main">
+		<div id="main" class="container-fluid">
 			<hr>
 			<div id="table">
-			<table>
-				<tr>
-					<td width="100px"></td>
-					<td>
-						<div class="image">
-							<img src="images/restaurant.png" alt="Photo of the Osteria da Nanni entrance by Stylemaier" 
-							style="align: center; border-radius: 8px; max-width: 100%; height: auto; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
-						</div>
-					</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td width="100px"></td>
-					<td>
-						<div class="content">
-							<h3>Who are we?</h3>
-							<p>Our kitchen serves traditional Italian dishes with a modern twist. All dishes are prepared with fresh and locally-sourced produce. 
-							<br />Come on in and enjoy our fresh pasta and tasty desserts.</p>
-						</div>
-					</td>
-					<td></td>
-				</tr>
-			</table>
+				<table>
+					<tr>
+						<td width="100px"></td>
+						<td>
+							<div class="image">
+								<img src="images/restaurant.png" alt="Photo of the Osteria da Nanni entrance by Stylemaier" 
+								style="align: center; border-radius: 8px; max-width: 100%; height: auto; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
+							</div>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td width="100px"></td>
+						<td>
+							<div class="content">
+								<h3>Who are we?</h3>
+								<p>Our kitchen serves traditional Italian dishes with a modern twist. All dishes are prepared with fresh and locally-sourced produce. 
+								<br />Come on in and enjoy our fresh pasta and tasty desserts.</p>
+							</div>
+						</td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+			
+			<div class="container">
+				<div class="jumbotron" >
+					<h2>We are opening a new location!</h2> 
+					<p>Join us for the grand opening at Piazza Cavour next month.</p> 
+				</div>
+				
+				<br>
+				<br>
+				<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				  <!-- Indicators -->
+				  <ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+				  </ol>
+				  
+				  <!-- Wrapper for slides -->
+				  <div class="carousel-inner" role="listbox">
+					<div class="item active">
+					  <img src="images/newLocation.jpg" alt="photo of the new location at Piazza Cavour" width="600" height ="300">
+					        <div class="carousel-caption">
+								<h3>Opening soon!</h3>
+								<p>We're opening a second location at Piazza Cavour.</p>
+							 </div>
+					</div>
+
+					<div class="item">
+					  <img src="images/newMenu.jpg" alt="photo of our seasonal dishes" width="600" height ="300">
+					        <div class="carousel-caption">
+								<h3>New Menu</h3>
+								<p>We're rolling out our seasonal menu, with special options for this season.</p>
+							 </div>
+					</div>
+
+					<div class="item">
+					  <img src="images/beer.jpg" alt="photo of SG Special Brew" width="600" height ="300">
+					        <div class="carousel-caption">
+								<h3>Drinks</h3>
+								<p>The drink of the month is SG Special Brew.</p>
+							 </div>
+					</div>
+				  </div>
+				  
+				  <!-- Left and right controls -->
+				  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+					<!-- <span class="fa fa-chevron-left" aria-hidden="true"></span> -->
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				  </a>
+				  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				  </a>		  
+				  
+				</div>
 			</div>
 		</div>
-		</div>
 		
-		<div id="footer" class="footer navbar-fixed-bottom">
+		<div id="footer">
 			<hr />
 			<footer>
 				<p>Via Roma 1, Bologna, Italia, 47900 
@@ -72,6 +139,9 @@
 				0039-0987-456-132</p>
 			</footer>
 		</div>
+		
+		<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	</body>
 </html>
 
